@@ -19,7 +19,7 @@ call pathogen#helptags()
 set nocompatible
 
 " set flavour-of-the-moment colour scheme
-colorscheme blackboard
+colorscheme vividchalk
 
 " ignore cases in searches except when search contains uppercase characters
 " use \C{string} to force case-sensitive searches
