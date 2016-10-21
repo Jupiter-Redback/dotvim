@@ -75,6 +75,7 @@ set hidden
 " F8 - toggle line numbering
 " F9  - switch between current and elternate buffers
 map <F2> <C-w>
+map <F6> :GundoToggle<CR>
 map <F7> :set noautoindent!<CR>
 map <F8> :set nonumber!<CR>
 map <F9> <C-^>
