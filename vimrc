@@ -98,3 +98,7 @@ vmap <C-Down> ]egv
 " visually select the text that was last edited/pasted
 nmap gV `[v`]
 
+" use ag instead of ack, if we have it
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
