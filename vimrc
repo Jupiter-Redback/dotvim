@@ -19,7 +19,7 @@ call pathogen#helptags()
 set nocompatible
 
 " set flavour-of-the-moment colour scheme
-colorscheme vividchalk
+colorscheme molokai
 
 " ignore cases in searches except when search contains uppercase characters
 " use \C{string} to force case-sensitive searches
@@ -102,3 +102,18 @@ nmap gV `[v`]
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+
+" NERDcommenter settings
+" add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+
+" airline tweaks
+let g:airline#extensions#tabline#enabled = 1
+
