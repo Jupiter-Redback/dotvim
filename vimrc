@@ -31,6 +31,12 @@ set wrap
 set linebreak
 set showbreak=…
 
+" should really be using UTF-8 with python
+set encoding=utf-8
+
+" python3 for the mode plugin
+let g:pymode_python = 'python3'
+
 " rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
