@@ -71,10 +71,15 @@ set hidden
 
 " assign function keys within vim
 " F2  - make it easier to work with window operations
-" F7 - toggle auto-indentation
-" F8 - toggle line numbering
+" F3  - toggle NERDtree
+" F5  - toggle git gutter
+" F6  - toggle undo buffer history
+" F7  - toggle auto-indentation
+" F8  - toggle line numbering
 " F9  - switch between current and elternate buffers
 map <F2> <C-w>
+map <F3> :NERDTreeToggle<CR>
+map <F5> :GitGutterToggle<CR>
 map <F6> :GundoToggle<CR>
 map <F7> :set noautoindent!<CR>
 map <F8> :set nonumber!<CR>
@@ -116,4 +121,28 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " airline tweaks
 let g:airline#extensions#tabline#enabled = 1
+
+" newbie sttings for syntastic (revisit when newbieness recedes)
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" auto-close if NERDtree is last man standing
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
