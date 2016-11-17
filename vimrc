@@ -19,7 +19,8 @@ call pathogen#helptags()
 set nocompatible
 
 " set flavour-of-the-moment colour scheme
-colorscheme molokai
+set background=dark
+colorscheme solarized
 
 " ignore cases in searches except when search contains uppercase characters
 " use \C{string} to force case-sensitive searches
