@@ -20,7 +20,7 @@ set nocompatible
 
 " set flavour-of-the-moment colour scheme
 set background=dark
-colorscheme solarized
+colorscheme zenburn
 
 " ignore cases in searches except when search contains uppercase characters
 " use \C{string} to force case-sensitive searches
@@ -153,3 +153,11 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+" customisations for PythonMode
+let g:pymode_trim_whitespaces = 1
+let g:pymode_quickfix_minheight = 3
+let g:pymode_quickfix_maxheight = 6
+let g:pymode_syntax_slow_sync = 1
+let g:pymode_syntax_all = 1
+nmap <leader>lt :PymodeLint<CR>
+nmap <leader>lta :PymodeLintAuto<CR>
