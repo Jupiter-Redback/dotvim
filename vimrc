@@ -79,14 +79,19 @@ set hidden
 " assign function keys within vim
 " F2  - make it easier to work with window operations
 " F3  - toggle NERDtree
-" F5  - toggle git gutter
+" F4  - toggle git gutter
+" F5  - run buffer contents as script
 " F6  - toggle undo buffer history
 " F7  - toggle auto-indentation
 " F8  - toggle line numbering
-" F9  - switch between current and elternate buffers
+" F9  - switch between current and alternate buffers
 map <F2> <C-w>
 map <F3> :NERDTreeToggle<CR>
-map <F5> :GitGutterToggle<CR>
+map <F4> :GitGutterToggle<CR>
+
+nmap <silent> <unique> <F5> :Bexec()<CR>
+vmap <silent> <unique> <F5> :BexecVisual()<CR>
+
 map <F6> :GundoToggle<CR>
 map <F7> :set noautoindent!<CR>
 map <F8> :set nonumber!<CR>
@@ -161,3 +166,26 @@ let g:pymode_syntax_slow_sync = 1
 let g:pymode_syntax_all = 1
 nmap <leader>lt :PymodeLint<CR>
 nmap <leader>lta :PymodeLintAuto<CR>
+
+" stop rsi from hitting the escape key all the time
+:inoremap jk <esc>
+
+" always split windows vertically
+set splitright
+set diffopt+=vertical
+silent! set splitvertical
+if v:errmsg != ''
+  cabbrev split vert split
+  cabbrev hsplit split
+  cabbrev help vert help
+  noremap <C-w>] :vert botright wincmd ]<CR>
+  noremap <C-w><C-]> :vert botright wincmd ]<CR>
+else
+  cabbrev hsplit hor split
+endif
+
+" extra settings for bexec
+let bexec_splitdir="ver"
+let bexec_outputmode="append"
+let bexec_rehighlight=1
+set splitbelow
