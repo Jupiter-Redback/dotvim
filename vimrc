@@ -77,7 +77,7 @@ endif
 set hidden
 
 " assign function keys within vim
-" F2  - make it easier to work with window operations
+" F2  - make it easier to work with window ops (+ toggle paste mode)
 " F3  - toggle NERDtree
 " F4  - toggle git gutter
 " F5  - run buffer contents as script
@@ -86,6 +86,7 @@ set hidden
 " F8  - toggle line numbering
 " F9  - switch between current and alternate buffers
 map <F2> <C-w>
+set pastetoggle=<F2>
 map <F3> :NERDTreeToggle<CR>
 map <F4> :GitGutterToggle<CR>
 
@@ -189,3 +190,10 @@ let bexec_splitdir="ver"
 let bexec_outputmode="append"
 let bexec_rehighlight=1
 set splitbelow
+
+" move around a splits a bit easier
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
